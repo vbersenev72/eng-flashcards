@@ -3,16 +3,18 @@ import { Card } from "./card"
 
 interface ICardPlace {
     words: object[]
+    setWordIndex: Function
+    wordIndex: number
 }
 
 export const CardPlace = (props:ICardPlace) => {
     return (
         <div>
-            <button className='bg-amber-400 border-black border-2' onClick={() => console.log(props.words)}>output</button>
+            <button className='bg-black border-black border-2 text-white mb-14' onClick={() => console.log(props.words)}>test words array (building)</button>
             {/* Кнопка для теста массива слов */}
 
-            
-            <Card/>
+
+            <Card word = {props.words[props.wordIndex]} setWordIndex={props.setWordIndex} wordIndex={props.wordIndex} />
         </div>
     )
 }
