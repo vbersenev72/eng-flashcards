@@ -5,16 +5,26 @@ interface ICartProps {
     setWordIndex: Function
     wordIndex: number
 
+    translate: boolean
+    setTranslate: Function
 }
 
 export const Card = (props : ICartProps) => {
 
+    const [userInput, setUserInput] = useState('')
 
     return (
-        <div>
+        <div className="ml-8 text-center block">
             <h1>{props.word.en}</h1>
-            <h1>{props.word.rus}</h1>
-            <button className='bg-amber-400 border-black border-2' onClick={() => props.setWordIndex(props.wordIndex + 1)}>next</button>
+            {props.translate ? <h1>{props.word.rus}</h1> : <h1></h1>}
+            <button className='bg-amber-400 border-black border-2' onClick={() => props.setTranslate(!props.translate)}>unlock permission</button>
+            <button className='bg-amber-400 border-black border-2' onClick={() => {
+                props.setWordIndex(props.wordIndex + 1)
+                props.setTranslate(false)
+                }}>next</button>
+            <br/>
+            <input className="border-black border-2" value={userInput} onChange={(e) => setUserInput(e.target.value)}/>
+
         </div>
     )
 }

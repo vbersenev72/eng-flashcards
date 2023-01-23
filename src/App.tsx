@@ -12,10 +12,12 @@ function App() {
   const words = [...list]
   const [wordIndex, setWordIndex] = useState(0)
 
+  const [translate, setTranslate] = useState(false)
+
 
   return (
     <div className="App">
-        <CardPlace words={words} wordIndex={wordIndex} setWordIndex={setWordIndex} />
+        <CardPlace words={words} wordIndex={wordIndex} setWordIndex={setWordIndex} translate={translate} setTranslate = {setTranslate}/>
     </div>
   );
 }
