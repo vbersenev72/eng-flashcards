@@ -1,5 +1,4 @@
 
-import { Card } from './components/card';
 import { CardPlace } from './components/cardPlace';
 import list from './data/notesList';
 
@@ -8,7 +7,7 @@ import { useState } from 'react';
 
 
 function App() {
-
+  
   const words = [...list]
   const [wordIndex, setWordIndex] = useState(0)
 
