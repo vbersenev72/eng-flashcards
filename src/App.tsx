@@ -4,6 +4,7 @@ import list from './data/notesList';
 
 import "./App.css"
 import { useState } from 'react';
+import { MyContextProvider } from './components/context/Context';
 
 
 function App() {
@@ -15,8 +16,12 @@ function App() {
 
 
   return (
+
     <div className="App">
-        <CardPlace words={words} wordIndex={wordIndex} setWordIndex={setWordIndex} translate={translate} setTranslate = {setTranslate}/>
+      <MyContextProvider>
+      <CardPlace words={words} wordIndex={wordIndex} setWordIndex={setWordIndex} translate={translate} setTranslate = {setTranslate}/>
+      </MyContextProvider>
+        
     </div>
   );
 }

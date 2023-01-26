@@ -14,7 +14,7 @@ interface ICartProps {
 export const Card = (props : ICartProps) => {
 
     const ClickNext = (p:any) => {
-        p.setWordIndex(props.wordIndex + 1)
+        p.setWordIndex(p.wordIndex + 1)
         p.setTranslate(false)
         setUserInput('')
         // Очищает инпут у пользователя
