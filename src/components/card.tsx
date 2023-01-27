@@ -1,38 +1,33 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { MyButton } from "./UI/MyButton/MyButton"
 import { MyInput } from "./UI/MyInput/MyInput"
 
-interface ICartProps {
-    word: any
-    setWordIndex: Function
-    wordIndex: number
-
-    translate: boolean
-    setTranslate: Function
-}
-
-export const Card = (props : ICartProps) => {
-
-    const ClickNext = (p:any) => {
-        p.setWordIndex(p.wordIndex + 1)
-        p.setTranslate(false)
-        setUserInput('')
-        // Очищает инпут у пользователя
-    }
 
 
-    const [userInput, setUserInput] = useState('')
+
+// interface ICartProps {
+//     word: any
+//     setWordIndex: Function
+//     wordIndex: number
+
+//     translate: boolean
+//     setTranslate: Function
+// }
+
+export const Card = (MyContext : any) => {
+
+    const store:any = useContext(MyContext)
 
     return (
         <div className="ml-8 w-64 text-center block">
-            <h1>{props.word.en}</h1>
-            {props.translate ? <h1>{props.word.rus}</h1> : <></>}
+            <h1>{store.word.en}</h1>
+            {store.translate ? <h1>{store.word.rus}</h1> : <></>}
             <div className="w-64" >
-                <MyButton onClick={() => props.setTranslate(!props.translate)}>unlock permission</MyButton>
-                <MyButton onClick={() => ClickNext(props)}>next</MyButton>
+                <MyButton onClick={() => store.setTranslate(!store.translate)}>unlock permission</MyButton>
+                <MyButton onClick={() => store.OnClickNextCard(store)}>next</MyButton>
                 <br/>
             </div>
-                <MyInput value={userInput} onChange={(e: any) => setUserInput(e.target.value)}/>
+                <MyInput value={store.userInput} onChange={(e: any) => store.setUserInput(e.target.value)}/>
         </div>
     )
 }
