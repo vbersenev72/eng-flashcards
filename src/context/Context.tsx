@@ -15,6 +15,10 @@ interface ContextType {
     words?: any
     value?: any
     OnCorrectAnswer?: any
+    setSubmitCorrectFlag?: any
+    SubmitCorrectFlag?: boolean
+    setSubmitInCorrectFlag?: any
+    SubmitInCorrectFlag?: boolean
 }
 
 const Context = React.createContext<ContextType>({})
@@ -23,7 +27,7 @@ const Context = React.createContext<ContextType>({})
 
  function ContextProvider({children}:any) {
 
-    const [userInput, setUserInput] = useState('') /*Инпут пользователя внутри Card, Валидируетя */
+    const [userInput, setUserInput] = useState('') /*Инпут пользователя внутри Card */
 
     const OnClickNextCard = (p:any) => {
         setWordIndex(wordIndex + 1)
@@ -48,10 +52,13 @@ const Context = React.createContext<ContextType>({})
 
     const [translate, setTranslate] = useState(false) /* если флаг активен - показывается перевод текста */
 
+    const [SubmitCorrectFlag, setSubmitCorrectFlag] = useState(false) /* если true => ответ пользователя верный, если false => неактивен */
+    const [SubmitInCorrectFlag, setSubmitInCorrectFlag] = useState(false) /* если true => ответ пользователя НЕверный, если false => неактивен */
+
     const word = words[wordIndex] /* слово из массива */
 
     const store: ContextType = {
-      userInput, setUserInput, OnCorrectAnswer, wordIndex, setWordIndex, setTranslate, word, words, translate
+      userInput, setUserInput, OnCorrectAnswer, wordIndex, setWordIndex, setTranslate, word, words, translate, setSubmitCorrectFlag, SubmitCorrectFlag, setSubmitInCorrectFlag, SubmitInCorrectFlag
     }
 
     return <Context.Provider value={store}> {children} </Context.Provider>
@@ -59,4 +66,5 @@ const Context = React.createContext<ContextType>({})
 
 export {ContextProvider, Context}
 
-
+// 28.01.23
+// ДОБАВИТЬ ИНДИКАТОР ВАЛИДАЦИИ ОТВЕТА ЮЗЕРА
