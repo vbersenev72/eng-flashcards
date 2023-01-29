@@ -39,9 +39,16 @@ const Context = React.createContext<ContextType>({})
 
     const OnCorrectAnswer = (userinput:string, word:any) => {
       if (userinput === word.rus){
-        setWordIndex(wordIndex + 1)
-        setTranslate(false)
-        setUserInput('')
+        setWordIndex(wordIndex + 1) /* Показ следующей карточки */
+        setTranslate(false) /* Сокрытие блока с переводом */
+        setUserInput('') /* Очищение инпута юзера */
+        setSubmitCorrectFlag(!SubmitCorrectFlag) // делаем значение true - чтобы вывести "Верно"
+
+        setTimeout(() => {
+          setSubmitCorrectFlag(false)
+        }, 3000); /* спустя 3 секунды надпись "Верно" пропадает */
+      } else {
+        
       }
     } /* Метод валидации инпута пользователя */
 

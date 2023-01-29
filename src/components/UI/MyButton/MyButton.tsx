@@ -7,7 +7,7 @@ export interface IMyButtonProps {
     onClick: any
 }
 
-export function MyButton ({children, ...props}:IMyButtonProps) {
+export function MyButton ({children, ...props}:any) {
   return (
     <button className={styles.MyBtn} {...props}>
         {children}

@@ -1,0 +1,9 @@
+.MySubmitCorrect {
+    background-color: green;
+    color: white;
+}
+
+.MySubmitInCorrect {
+    background-color: red;
+    color: white;
+}
