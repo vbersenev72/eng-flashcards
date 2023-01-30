@@ -47,8 +47,17 @@ const Context = React.createContext<ContextType>({})
         setTimeout(() => {
           setSubmitCorrectFlag(false)
         }, 3000); /* спустя 3 секунды надпись "Верно" пропадает */
+
       } else {
-        
+
+        setTranslate(false) /* Сокрытие блока с переводом */
+        setUserInput('') /* Очищение инпута юзера */
+        setSubmitInCorrectFlag(!SubmitInCorrectFlag) // делаем значение true - чтобы вывести "Неверно"
+
+        setTimeout(() => {
+          setSubmitInCorrectFlag(false)
+        }, 3000); /* спустя 3 секунды надпись "Неверно" пропадает */
+
       }
     } /* Метод валидации инпута пользователя */
 
@@ -72,6 +81,3 @@ const Context = React.createContext<ContextType>({})
 }
 
 export {ContextProvider, Context}
-
-// 28.01.23
-// ДОБАВИТЬ ИНДИКАТОР ВАЛИДАЦИИ ОТВЕТА ЮЗЕРА

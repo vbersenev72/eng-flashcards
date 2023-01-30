@@ -15,7 +15,7 @@ export const Card = (MyContext : ICardProps) => {
 
     const {word, translate, setTranslate, userInput, OnCorrectAnswer, setUserInput } = useContext(Context)
 
-    const { register, handleSubmit } = useForm()
+   // const { register, handleSubmit } = useForm()
     /* register - Это функция, которую необходимо подключить к каждому из полей ввода. В качестве ссылки (ref) */
     /* Функция register будет принимать значение, которое пользователь ввел в поле, и проверять его */
 
@@ -35,13 +35,13 @@ export const Card = (MyContext : ICardProps) => {
             {translate ? <h1>{word.rus}</h1> : <></>}
 
             <div className="w-64" >
-                <MyButton onClick={() => setTranslate(!translate)}>unlock permission</MyButton>
+                <button onClick={() => setTranslate(!translate)}>unlock permission</button>
                 <MyButton onClick={(e: any) => OnSubmit(userInput, word, e)}>next</MyButton>
                 <br/>
             </div>
 
             <form onSubmit={(e) => OnSubmit(userInput, word, e)}>
-                <MyInput ref={register} value={userInput} onChange={(e: any) => setUserInput(e.target.value)}/>
+                <MyInput value={userInput} onChange={(e: any) => setUserInput(e.target.value)}/>
             </form>
         </div>
     )
