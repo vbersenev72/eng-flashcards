@@ -1,0 +1,19 @@
+.about {
+    margin-top: 200px;
+
+
+    display: flex;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.about_link {
+    background-color: white;
+    color: black;
+    border-radius: 15px;
+    border: 2px white solid;
+
+    padding: 1em 1.5em
+}
+

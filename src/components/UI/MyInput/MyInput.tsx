@@ -6,6 +6,6 @@ export interface IMyInputProps {
 
 export function MyInput ({...props}: any) {
   return (
-    <input type="text" className={styles.MyInput} {...props} />
+    <input type="text" placeholder='Введите перевод' className={styles.MyInput} {...props} />
   );
 }

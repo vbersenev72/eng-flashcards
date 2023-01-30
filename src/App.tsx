@@ -4,6 +4,7 @@ import { CardPlace } from './components/cardPlace';
 import "./App.css"
 
 import { ContextProvider } from './context/Context';
+import About from './components/about';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
     <div className="App">
       <ContextProvider>
         <CardPlace/>
+        <About/>
       </ContextProvider>
     </div>
   );

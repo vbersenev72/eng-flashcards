@@ -1,7 +1,12 @@
 .MyBtn {
     padding: 5px 15px;
-    border: 1px solid teal;
+    border: 1px solid pink;
     width: auto;
     background: transparent;
+    border-radius: 15px;
 
+    transition: all 0.4s;
+}
+.MyBtn:hover {
+    background-color: pink;
 }

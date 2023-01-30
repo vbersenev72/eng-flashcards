@@ -1,4 +1,8 @@
 .MyInput {
-    border: 2px teal solid;
+    border-width: 0px 0px 1px 0px;
+    border-color: #090808;
+    transition: all .3s;
+    margin-bottom: 20px;
+    text-align: center;
 
 }
