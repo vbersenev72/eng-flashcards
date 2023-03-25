@@ -16,14 +16,9 @@
 
 React.js + TypeScript + React Context
 
+Redux-toolkit, React+Redux
+
 HTML/CSS (CSS-modules)
-
-
-
-
-### Пользовательский интерфейс
-
-Думаю с UI разобраться сумеете, в феврале 2023 будет добавлена документация по UI. Мне лень капеееецццц(. 
 
 
 

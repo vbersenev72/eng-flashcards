@@ -2,12 +2,13 @@ import * as React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import App from '../App';
 import { Login } from '../pages/login';
+import { Register } from '../pages/register';
 
 export interface IAppRouterProps {
 }
 
 export function AppRouter (props: IAppRouterProps) {
-    const auth = true
+    const [auth, setAuth] = React.useState(false)
 
   return (
     auth ?
@@ -16,7 +17,8 @@ export function AppRouter (props: IAppRouterProps) {
         </Routes>
         :
         <Routes>
-            <Route element={<Login/>} path='/login'/>
+            <Route element={<Login/>} path='/'/>
+            <Route element={<Register/>} path='/new'/>
         </Routes>
   );
 }

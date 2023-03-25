@@ -10,6 +10,9 @@ export function Login (props: ILoginProps) {
         <input type="text" />
         <input type="text" />
         <button>Login</button>
+        <br />
+        <a  href="/new">Регистрация</a>
+        <br />
       </form>
     </div>
   );
