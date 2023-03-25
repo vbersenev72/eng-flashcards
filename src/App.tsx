@@ -5,6 +5,7 @@ import "./App.css"
 
 import { ContextProvider } from './context/Context';
 import About from './components/about';
+import { AppRouter } from './components/AppRouter';
 
 function App() {
 
@@ -15,8 +16,7 @@ function App() {
 
     <div className="App">
       <ContextProvider>
-        <CardPlace/>
-        <About/>
+        <AppRouter/>
       </ContextProvider>
     </div>
   );
