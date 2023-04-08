@@ -8,7 +8,7 @@ export interface IAppRouterProps {
 }
 
 export function AppRouter (props: IAppRouterProps) {
-    const [auth, setAuth] = React.useState(false)
+    const [auth, setAuth] = React.useState(true)
 
   return (
     auth ?
